@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso a Enlaces MediaFire</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <h1>Acceso a Enlaces MediaFire</h1>
+
+  <!-- Enlace 1 -->
+  <p><a href="#" onclick="mostrarAnuncio('https://www.mediafire.com/file/ejemplo1.zip')">Enlace 1</a></p>
+
+  <!-- Enlace 2 -->
+  <p><a href="#" onclick="mostrarAnuncio('https://www.mediafire.com/file/ejemplo2.rar')">Enlace 2</a></p>
+
+  <!-- Script para mostrar anuncio y redirigir a MediaFire -->
+  <script>
+    function mostrarAnuncio(url) {
+      Swal.fire({
+        title: '¡Desbloquea el enlace!',
+        text: 'Para acceder al contenido, por favor completa la siguiente acción.',
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonText: 'Ver Anuncio',
+        cancelButtonText: 'Cancelar',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Aquí podrías redirigir a una página de anuncios o abrir un modal con el anuncio
+          // Luego redirigir a la URL de MediaFire
+          window.location.href = url;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
